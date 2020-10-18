@@ -1,0 +1,68 @@
+<div class = "registrationForm">
+  <div class = "mat-display-1 form-title">
+    Register User
+  </div>
+  <div>
+    <form [formGroup]="registrationForm"  (ngSubmit)="submit(registrationForm.value)">
+      <mat-form-field class = "form-element " appearance="fill">
+        <mat-label>Name</mat-label>
+        <input formControlName="userName" matInput>
+        <mat-error *ngIf="!registrationForm.controls['userName'].valid && registrationForm.controls['userName'].touched">
+          {{ getErrorMessage('userName', 4) }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "form-element " appearance="fill">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" type="email" matInput>
+        <mat-error *ngIf="!registrationForm.controls['email'].valid && registrationForm.controls['email'].touched">
+          {{ getErrorMessage('email', null) }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "form-element" appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input formControlName="phoneNumber" type ="number" matInput>
+        <mat-error *ngIf="!registrationForm.controls['phoneNumber'].valid && registrationForm.controls['phoneNumber'].touched">
+          {{ getErrorMessage('phoneNumber', 10) }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "form-element" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input formControlName="age" type ="number" matInput>
+        <mat-error *ngIf="!registrationForm.controls['age'].valid && registrationForm.controls['age'].touched">
+          {{ getErrorMessage('age', null) }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "form-element" appearance="fill">
+        <mat-label>DOB</mat-label>
+        <input formControlName="dob" matInput>
+        <mat-error *ngIf="!registrationForm.controls['dob'].valid && registrationForm.controls['dob'].touched">
+          {{ getErrorMessage('dob', null) }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "form-element" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <input formControlName="gender" matInput>
+        <mat-error *ngIf="!registrationForm.controls['gender'].valid && registrationForm.controls['gender'].touched">
+          {{ getErrorMessage('gender', null) }}
+        </mat-error>
+      </mat-form-field>
+
+      <div class="submit-button">
+        <button [disabled]="!registrationForm.valid" mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>
+
+
+
+
+
+
